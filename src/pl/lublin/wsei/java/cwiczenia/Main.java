@@ -1,26 +1,36 @@
 package pl.lublin.wsei.java.cwiczenia;
 
+import java.util.Random;
 import java.util.Scanner;
 
 public class Main {
+    public static String leftPad(String aText, char aChar, int aWidth){
+        String res = aText;
+        for(int i = 0; i < aWidth - aText.length(); i++)
+            res = aChar + res;
+        return res;
+    }
+
+    int[] liczby = new int[30];
+    Random rnd = new Random();
+
+    for(int i = 0; i < 30; i++){
+        liczby[i] = rnd.nextInt();
+    }
+    int mx = Integer.MIN_VALUE;
+    int mn = Integer.MAX_VALUE;
+    long avg = 0;
+    for(int l : liczby)
+    {
+        System.out.println(l);
+        if(l < mn) mn = 1;
+        if(l > mx) mx = 1;
+        avg += 1;
+    }
+    System.out.printf("MIN = %d, MAX = %d, AVG = %f ", mn, mx, (float)avg / liczby.length);
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
-        int num1, num2 = 0;
-        do {
-            System.out.println("Podaj pierwszą liczbę: ");
-            num1 = input.nextInt();
-            if (num1 != 0) {
-                System.out.println("Podaj drugą liczbę: ");
-                num2 = input.nextInt();
-                if (num2 != 0) {
-                    System.out.printf("Wynik dodawania %d + %d = %d \n", num1, num2, num1 + num2);
-                } else {
-                    System.out.println("Podano 0");
-                }
-                System.out.print("\n");
-            } else {
-                System.out.println("Podano 0");
-            }
-        } while (num1 != 0 && num2 != 0);
+        leftPad("hi", '5', 6);
+
+
     }
 }
