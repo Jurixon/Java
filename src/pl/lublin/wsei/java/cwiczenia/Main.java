@@ -15,11 +15,11 @@ public class Main {
                 if (num2 != 0) {
                     System.out.printf("Wynik dodawania %d + %d = %d \n", num1, num2, num1 + num2);
                 } else {
-                    System.out.println("Podano 0 koniec programu.");
+                    System.out.println("Podano 0");
                 }
                 System.out.print("\n");
             } else {
-                System.out.println("Podano 0 koniec programu.");
+                System.out.println("Podano 0");
             }
         } while (num1 != 0 && num2 != 0);
     }
